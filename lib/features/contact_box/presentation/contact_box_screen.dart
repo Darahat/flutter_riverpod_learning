@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/contact_box_providers.dart';
 import '../presentation/contact_entry_list.dart';
-import 'package:flutter_riverpod_project/features/contact_box/presentation/contact_box_screen.dart';
 
 class ContactBoxScreen extends ConsumerStatefulWidget {
   const ContactBoxScreen({super.key});

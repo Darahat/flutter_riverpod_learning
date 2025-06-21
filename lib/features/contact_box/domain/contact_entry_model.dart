@@ -17,4 +17,15 @@ class ContactEntryModel {
   final String contact;
 
   ContactEntryModel({required this.contact});
+
+  // ✅ Override equality for testing and comparison
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ContactEntryModel &&
+          runtimeType == other.runtimeType &&
+          contact == other.contact;
+
+  @override
+  int get hashCode => contact.hashCode ^ contact.hashCode;
 }
