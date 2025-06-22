@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/text_box_providers.dart';
-import '../presentation/text_entry_list.dart';
 import 'package:flutter_riverpod_project/features/contact_box/presentation/contact_box_screen.dart';
+import 'package:flutter_riverpod_project/features/product_box/presentation/product_box_screen.dart';
+
+import '../presentation/text_entry_list.dart';
+import '../providers/text_box_providers.dart';
 
 class TextBoxScreen extends ConsumerStatefulWidget {
   const TextBoxScreen({super.key});
@@ -60,6 +62,17 @@ class _TextBoxScreenState extends ConsumerState<TextBoxScreen> {
                 );
               },
               child: const Text('Contact Box'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProductBoxScreen(),
+                  ),
+                );
+              },
+              child: const Text('Products List'),
             ),
             Expanded(child: TextEntryList(entries: entries)),
           ],

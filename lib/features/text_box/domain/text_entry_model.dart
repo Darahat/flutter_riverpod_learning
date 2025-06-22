@@ -8,7 +8,7 @@ class TextEntryModel {
   final String text;
 
   @HiveField(1)
-  final int age;
+  final int? age;
 
   TextEntryModel({required this.text, required this.age});
 

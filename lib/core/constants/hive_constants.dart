@@ -3,4 +3,5 @@ class HiveConstants {
 
   static const String textBox = "text_box";
   static const String contactInfoBox = "contact_info_box";
+  static const String productInfoBox = "product_info_box";
 }

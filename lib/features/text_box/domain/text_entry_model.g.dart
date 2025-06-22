@@ -18,7 +18,7 @@ class TextEntryModelAdapter extends TypeAdapter<TextEntryModel> {
     };
     return TextEntryModel(
       text: fields[0] as String,
-      age: fields[1] as int,
+      age: fields[1] as int?,
     );
   }
 
