@@ -12,6 +12,25 @@ class ProductBoxScreen extends ConsumerStatefulWidget {
 }
 
 class _ProductBoxScreenState extends ConsumerState<ProductBoxScreen> {
+  bool _isLoading = false;
+  @override
+  void initState() {
+    super.initState();
+    _fetchProducts();
+  }
+
+  Future<void> _fetchProducts() async {
+    setState(() {
+      _isLoading = true;
+    });
+    await ref
+        .read(productBoxControllerProvider.notifier)
+        .fetchAndCacheProducts();
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final products = ref.watch(productBoxControllerProvider);

@@ -23,5 +23,6 @@ class ProductBoxController extends StateNotifier<List<ProductModel>> {
   Future<void> fetchAndCacheProducts() async {
     await repository.fetchAndCacheProducts();
     state = repository.getEntries();
+    print('Hllo');
   }
 }

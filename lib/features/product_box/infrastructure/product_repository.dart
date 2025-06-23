@@ -9,6 +9,9 @@ class ProductRepository {
   final Box<ProductModel> _box = Hive.box<ProductModel>(
     HiveConstants.productInfoBox,
   );
+  final http.Client client;
+  ProductRepository({http.Client? client})
+    : this.client = client ?? http.Client();
 
   List<ProductModel> getEntries() => _box.values.toList();
 
@@ -18,7 +21,7 @@ class ProductRepository {
 
   /// Fetch products from the Api
   Future<List<ProductModel>> fetchProductsFromApi() async {
-    final response = await http.get(
+    final response = await client.get(
       Uri.parse('https://fakestoreapi.com/products'),
     );
     if (response.statusCode == 200) {
